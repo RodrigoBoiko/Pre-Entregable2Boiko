@@ -17,3 +17,20 @@ for (const ciudad in vuelos) {
     origenSelect.add(option);
 }
 
+function calcularReserva() {
+    const origen = origenSelect.value;
+    const destino = destinoSelect.value;
+    const costoVuelo = vuelos[origen][destino];
+    const fecha = fechaInput.value;
+    const pasajeros = parseInt(pasajerosInput.value);
+    const costoTotal = costoVuelo * pasajeros;
+
+    resumenDiv.innerHTML = `
+        <h2>Resumen de la Reserva</h2>
+        <p>Origen: ${origen}</p>
+        <p>Destino: ${destino}</p>
+        <p>Fecha de Viaje: ${fecha}</p>
+        <p>Número de Pasajeros: ${pasajeros}</p>
+        <p>Costo Total: $${costoTotal}</p>
+    `;
+}
