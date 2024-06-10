@@ -1,42 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva de Vuelos</title>
+    <title>Reservación de Vuelos Internacionales</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <h1>Reserva de Vuelos</h1>
-    
-    <div>
-        <label for="origen">Origen:</label>
-        <select id="origen"></select>
-    </div>
-
-    <div>
-        <label for="destino">Destino:</label>
-        <select id="destino"></select>
-    </div>
-
-    <div>
-        <label for="fecha">Fecha de Viaje:</label>
-        <input type="date" id="fecha">
-    </div>
-
-    <div>
-        <label for="pasajeros">Número de Pasajeros:</label>
-        <input type="number" id="pasajeros" min="1">
-    </div>
-
-    <button onclick="calcularReserva()">Calcular Reserva</button>
-
-    <div id="resumen"></div>
-
+    <h1>Reservación de Vuelos Internacionales</h1>
+    <div id="flightList"></div>
     <script src="script.js"></script>
 </body>
-
 </html>
