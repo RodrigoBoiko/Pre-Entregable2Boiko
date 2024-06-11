@@ -137,3 +137,14 @@ body {
 .discount button:hover {
     background-color: #003366;
 }
+
+.discount-details {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: none;
+}

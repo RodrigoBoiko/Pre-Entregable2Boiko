@@ -76,12 +76,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const discounts = [
-        { destination: 'Londres, Reino Unido', discount: '20%' },
-        { destination: 'Roma, Italia', discount: '15%' },
-        { destination: 'Bangkok, Tailandia', discount: '25%' }
+        { destination: 'Londres, Reino Unido', discount: '20%', price: '$800', description: 'Descuento especial del 20% para vuelos a Londres. Precio original: $1000.' },
+        { destination: 'Roma, Italia', discount: '15%', price: '$700', description: '¡Ahorra un 15% en tu viaje a Roma! Precio original: $825.' },
+        { destination: 'Bangkok, Tailandia', discount: '25%', price: '$900', description: '¡Descuento del 25% en vuelos a Bangkok! Precio original: $1200.' }
     ];
 
     const discountsContainer = document.getElementById('discountsContainer');
+    const discountDetails = document.getElementById('discountDetails');
 
     // Mostrar descuentos de viajes
     discounts.forEach(discount => {
@@ -89,9 +90,19 @@ document.addEventListener('DOMContentLoaded', function () {
         discountElement.classList.add('discount');
         discountElement.innerHTML = `
             <h3>${discount.destination}</h3>
+            <p>Precio: ${discount.price}</p>
             <p>¡Descuento especial del ${discount.discount}!</p>
             <button class="button">Ver Detalles</button>
         `;
+        discountElement.addEventListener('click', () => showDiscountDetails(discount.description));
         discountsContainer.appendChild(discountElement);
     });
+
+    function showDiscountDetails(description) {
+        discountDetails.textContent = description;
+        discountDetails.style.display = 'block';
+        setTimeout(() => {
+            discountDetails.style.display = 'none';
+        }, 5000);
+    }
 });
