@@ -1,26 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const flights = [
-        { id: 1, from: 'Madrid', to: 'Tokio', price: 600 },
-        { id: 2, from: 'Paris', to: 'Seoul', price: 700 },
-        { id: 3, from: 'London', to: 'Beijing', price: 800 },
-    ];
 
-    const flightList = document.getElementById('flightList');
-    const cartContainer = document.getElementById('cart');
-    const originInput = document.getElementById('origin');
-    const destinationInput = document.getElementById('destination');
+    const originSelect = document.getElementById('origin');
+    const destinationSelect = document.getElementById('destination');
     const tripTypeSelect = document.getElementById('tripType');
+    const departureDateInput = document.getElementById('departureDate');
+    const returnDateInput = document.getElementById('returnDate');
     const passengersInput = document.getElementById('passengers');
     const searchButton = document.getElementById('searchButton');
+    const flightList = document.getElementById('flightList');
+    const cartContainer = document.getElementById('cart');
+    const priceDisplay = document.getElementById('priceDisplay');
     const cart = [];
 
     searchButton.addEventListener('click', searchFlights);
 
     function searchFlights() {
-        const origin = originInput.value;
-        const destination = destinationInput.value;
+        const origin = originSelect.value;
+        const destination = destinationSelect.value;
         const tripType = tripTypeSelect.value;
+        const departureDate = departureDateInput.value;
+        const returnDate = returnDateInput.value;
         const passengers = passengersInput.value;
+
+        // Calcular el precio total del vuelo (simulación)
+        const pricePerPassenger = 500; // Precio base por pasajero
+        const totalPrice = pricePerPassenger * passengers;
+
+        // Mostrar el precio total en la página
+        priceDisplay.textContent = `Precio total del vuelo para ${passengers} pasajeros desde ${origin} a ${destination}: $${totalPrice}`;
 
         // Aquí iría la lógica para buscar vuelos según los criterios seleccionados
         // Por simplicidad, mostraremos todos los vuelos disponibles
