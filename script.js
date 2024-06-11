@@ -7,9 +7,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const flightList = document.getElementById('flightList');
     const cartContainer = document.getElementById('cart');
+    const originInput = document.getElementById('origin');
+    const destinationInput = document.getElementById('destination');
+    const tripTypeSelect = document.getElementById('tripType');
+    const passengersInput = document.getElementById('passengers');
+    const searchButton = document.getElementById('searchButton');
     const cart = [];
 
+    searchButton.addEventListener('click', searchFlights);
+
+    function searchFlights() {
+        const origin = originInput.value;
+        const destination = destinationInput.value;
+        const tripType = tripTypeSelect.value;
+        const passengers = passengersInput.value;
+
+        // Aquí iría la lógica para buscar vuelos según los criterios seleccionados
+        // Por simplicidad, mostraremos todos los vuelos disponibles
+        displayFlights();
+    }
+
     function displayFlights() {
+        flightList.innerHTML = '';
         flights.forEach(flight => {
             const flightElement = document.createElement('div');
             flightElement.classList.add('flight');
@@ -46,6 +65,4 @@ document.addEventListener('DOMContentLoaded', function () {
             cartContainer.appendChild(cartList);
         }
     }
-
-    displayFlights();
 });
