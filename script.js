@@ -73,3 +73,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const discounts = [
+        { destination: 'Londres, Reino Unido', discount: '20%' },
+        { destination: 'Roma, Italia', discount: '15%' },
+        { destination: 'Bangkok, Tailandia', discount: '25%' }
+    ];
+
+    const discountsContainer = document.getElementById('discountsContainer');
+
+    // Mostrar descuentos de viajes
+    discounts.forEach(discount => {
+        const discountElement = document.createElement('div');
+        discountElement.classList.add('discount');
+        discountElement.innerHTML = `
+            <h3>${discount.destination}</h3>
+            <p>¡Descuento especial del ${discount.discount}!</p>
+            <button class="button">Ver Detalles</button>
+        `;
+        discountsContainer.appendChild(discountElement);
+    });
+});
